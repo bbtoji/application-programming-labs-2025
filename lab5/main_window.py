@@ -10,18 +10,17 @@ from PyQt5.QtWidgets import (
 )
 from PyQt5.QtGui import QPixmap
 from PyQt5.QtCore import Qt
-from iterator import ImageIterator   # ← Импорт итератора из ЛР2
+from iterator import ImageIterator
 
 
 class IteratorWrapper:
     """
-    Обёртка над твоим ImageIterator, чтобы можно было двигаться вперёд-назад.
-    В ЛР2 итератор только линейный, поэтому добавляю буфер путей.
+    Обёртка над моим ImageIterator, чтобы можно было двигаться вперёд-назад
     """
 
     def __init__(self, csv_file):
         self.original_iter = ImageIterator(csv_file)
-        self.items = list(self.original_iter)   # сохраняем всё в список
+        self.items = list(self.original_iter)
         self.index = 0
 
     def total(self):
